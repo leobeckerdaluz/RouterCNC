@@ -91,28 +91,22 @@ extern void update_value(bool update_to_up_or_down);
 #define INTERVAL_LONG_CLICK 500 // ms
 #define INTERVAL_SHORT_CLICK 70 // ms
 
-// Read buttons
-void read_p_button();
-void read_left_button();
-void read_right_button();
-void read_s_button();
-
 // Buttons handlers
 void p_button_short_click_event();
-void p_button_long_click_event();
 void left_button_short_click_event();
-void left_button_long_click_event();
 void right_button_short_click_event();
-void right_button_long_click_event();
 void s_button_short_click_event();
-void s_button_long_click_event();
 
 
 // ----------------------------------
 //            ENCODER
 // ----------------------------------
-extern void encoder_ISR();
+void encoder_ISR();
 
+// ----------------------------------
+//            SERIAL
+// ----------------------------------
+void monitor_serial();
 
 // ----------------------------------
 //             SCREENS
