@@ -197,7 +197,16 @@ String findNext(int id)
       if(id==1 || id == 2)
       {
          //Serial.println(buffer.substring(bufferPosition[id],  bufferPosition[posi]));
-         return buffer.substring(bufferPosition[id],  bufferPosition[posi]);
+         
+
+         if(last==0)
+         {
+             return buffer.substring(bufferPosition[id],  second);
+         }else{
+             return buffer.substring(bufferPosition[id],  bufferPosition[posi]);
+         }
+
+         
       }else{
 
           if(last == 0)
