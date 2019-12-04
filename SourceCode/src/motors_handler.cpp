@@ -6,6 +6,8 @@
 #include <Arduino.h>
 #include "definitions.h"
 #include <Stepper.h>
+#include <display.h>
+
 
 #define X_AXIS_STEPPER_DRIVER_1     12
 #define X_AXIS_STEPPER_DRIVER_2     11
@@ -92,11 +94,14 @@ void run_motor(){
     previous = val;
 }
 
-#define LENTO 50
+#define LENTO   30
+#define MEDIO   60
+#define RAPIDO  100
 
 uint8_t duty;
 
 void set_X_motor(uint8_t value){
+
 
 }
 void set_Y_motor(uint8_t value){
@@ -105,15 +110,44 @@ void set_Y_motor(uint8_t value){
 void set_Z_motor(uint8_t value){
     
 }
-void set_all_motors_speed(uint8_t state){
-    
+void set_all_motors_speed(String state){
+    if(state == "Lento")
+    {
+        stepper_X.setSpeed(LENTO);
+        stepper_Y.setSpeed(LENTO);
+        stepper_Z.setSpeed(LENTO);
+    }else if(state=="Medio"){
+        stepper_X.setSpeed(MEDIO);
+        stepper_Y.setSpeed(MEDIO);
+        stepper_Z.setSpeed(MEDIO);
+    }else if(state=="Rapido"){
+        stepper_X.setSpeed(RAPIDO);
+        stepper_Y.setSpeed(RAPIDO);
+        stepper_Z.setSpeed(RAPIDO);
+    }
 }
 void set_spindle_state(uint8_t on_off){
+    if(!on_off)
+    {
+        analogWrite(SPIPNDLE_DRIVER_1, 0);
+        analogWrite(SPIPNDLE_DRIVER_2,0);
+
+    }else{
+        if(sentido==CW)
+        {
+            analogWrite(SPIPNDLE_DRIVER_1, duty);
+        }else{
+            analogWrite(SPIPNDLE_DRIVER_2, duty);
+        }
+    }
+        
+    
     
 }
 void set_spindle_speed(uint8_t value){
-    if (value == 0)
-        duty = LENTO;
+    
+    duty = map(value,200,2000, 0,255);
+
 
     // analogWrite();
 }
