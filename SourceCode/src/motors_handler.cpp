@@ -91,3 +91,32 @@ void run_motor(){
     // remember the previous value of the sensor
     previous = val;
 }
+
+#define LENTO 50
+
+uint8_t duty;
+
+void set_X_motor(uint8_t value){
+
+}
+void set_Y_motor(uint8_t value){
+    
+}
+void set_Z_motor(uint8_t value){
+    
+}
+void set_all_motors_speed(uint8_t state){
+    
+}
+void set_spindle_state(uint8_t on_off){
+    
+}
+void set_spindle_speed(uint8_t value){
+    if (value == 0)
+        duty = LENTO;
+
+    // analogWrite();
+}
+void set_spindle_rotation_side(uint8_t right_left){
+    
+}
