@@ -38,7 +38,7 @@ void loop()
 {
 	heart_beating();
 
-	// monitor_serial();
+	monitor_serial();
 
 	// Atualiza a tela de maneira não forçada
 	// update_current_screen(false);
