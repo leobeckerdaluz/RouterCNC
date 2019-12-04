@@ -27,11 +27,11 @@ void setup()
 	Serial.begin(9600);
 	#endif
 
-	// INICIALIZA TUDO QUE PRECISA
-	// INICIALIZA TUDO QUE PRECISA
-	// attachInterrupt(digitalPinToInterrupt(ENCODER_PIN), encoder_ISR, RISING);
-	// INICIALIZA TUDO QUE PRECISA
-	// INICIALIZA TUDO QUE PRECISA
+	// Configura a interrupção nos botões
+	attachInterrupt(digitalPinToInterrupt(BUTTON_LEFT_PIN), left_button_short_click_event, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_P_PIN), p_button_short_click_event, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_S_PIN), s_button_short_click_event, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_RIGHT_PIN), right_button_short_click_event, RISING);
 }
 
 void loop()
