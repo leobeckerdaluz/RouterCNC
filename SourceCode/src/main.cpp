@@ -1,45 +1,72 @@
 #include <Arduino.h>
 #include "definitions.h"
+#include "main.h"
+#include "display.h"
+
+// temporizador heartbeat
+unsigned long atual_hb;
+unsigned long time_hb;
+
+// temporizador cover closed
+unsigned long time_cc;
+unsigned long atual_cc;
+
+unsigned long timer, atual;
+
+bool cover_closed_state = false, timer_end = false, referencia = false;
+
+uint8_t axis_x = 100, axis_y = 99, axis_z = 9, spindle;
+uint8_t axis, page, sentido = CW;
 
 void heart_beating(){
-	static unsigned long long int millis_heart_beating = 0;
-
-	if (millis()-millis_heart_beating >= DELAY_HEART_BEATING){
-		millis_heart_beating = millis();
+	atual_hb = millis();
+	if (atual_hb - time_hb >= DELAY_HEART_BEATING){
 		digitalWrite(PIN_HEART_BEATING, !digitalRead(PIN_HEART_BEATING));
+		time_hb = atual_hb;
 	}
+}
+
+void cover_closed(){
+	if(digitalRead(COVER_CLOSED)){
+		atual_cc = millis();
+		while(digitalRead(COVER_CLOSED) == HIGH);
+		time_cc = millis();
+		if(time_cc - atual_cc >= 100)	cover_closed_state = true;
+	}
+}
+
+void button_init(void)
+{
+	pinMode(BUTTON_P_PIN,   INPUT);
+	pinMode(BUTTON_S_PIN,   INPUT);
+	pinMode(BUTTON_CCW_PIN, INPUT);
+	pinMode(BUTTON_CW_PIN,  INPUT);
+
+	attachInterrupt(digitalPinToInterrupt(BUTTON_P_PIN),   manual_ISR, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_S_PIN),   CW_ISR, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_CCW_PIN), CCW_ISR, RISING);
+	attachInterrupt(digitalPinToInterrupt(BUTTON_CW_PIN),  spindle_ISR, RISING);
 }
 
 void setup() 
 {
-	// BUTTONS
-	pinMode(BUTTON_P_PIN, INPUT);
-	pinMode(BUTTON_LEFT_PIN, INPUT);
-	pinMode(BUTTON_RIGHT_PIN, INPUT);
-	pinMode(BUTTON_S_PIN, INPUT);
+	display_init();	
+	button_init();
+	
 	// OUTPUTS
+	pinMode(COVER_CLOSED, INPUT);
 	pinMode(PIN_HEART_BEATING, OUTPUT);
-	pinMode(DRIVER_ENABLE_PIN, OUTPUT);
-	pinMode(FAN__PWM_OUTPUT_PIN, OUTPUT);
-	pinMode(HEAT_PWM_OUTPUT_PIN, OUTPUT);
 
-	#if DEBUG_CONSOLE
 	Serial.begin(9600);
-	#endif
 
-	// Configura a interrupção nos botões
-	attachInterrupt(digitalPinToInterrupt(BUTTON_LEFT_PIN), left_button_short_click_event, RISING);
-	attachInterrupt(digitalPinToInterrupt(BUTTON_P_PIN), p_button_short_click_event, RISING);
-	attachInterrupt(digitalPinToInterrupt(BUTTON_S_PIN), s_button_short_click_event, RISING);
-	attachInterrupt(digitalPinToInterrupt(BUTTON_RIGHT_PIN), right_button_short_click_event, RISING);
+	welcome_display();
+	// motors_go_home();
 }
 
 void loop()
 {
+	// cover_closed();
 	heart_beating();
-
 	monitor_serial();
-
-	// Atualiza a tela de maneira não forçada
-	// update_current_screen(false);
+	display_update_screen();
 }

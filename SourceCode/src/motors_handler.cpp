@@ -7,12 +7,21 @@
 #include "definitions.h"
 #include <Stepper.h>
 
+#define X_AXIS_STEPPER_DRIVER_1     12
+#define X_AXIS_STEPPER_DRIVER_2     11
+#define Y_AXIS_STEPPER_DRIVER_1     10
+#define Y_AXIS_STEPPER_DRIVER_2     9
+#define Z_AXIS_STEPPER_DRIVER_1     8
+#define Z_AXIS_STEPPER_DRIVER_2     7
+#define SPIPNDLE_DRIVER             6
+
+
 // change this to the number of steps on your motor
 #define STEPS 100
 
-Stepper stepper_X(STEPS, 8, 9, 10, 11);
-Stepper stepper_Y(STEPS, 12, 13, 14, 15);
-Stepper stepper_Z(STEPS, 16, 17, 18, 19);
+Stepper stepper_X(STEPS, X_AXIS_STEPPER_DRIVER_1, X_AXIS_STEPPER_DRIVER_2);
+Stepper stepper_Y(STEPS, Y_AXIS_STEPPER_DRIVER_1, Y_AXIS_STEPPER_DRIVER_2);
+Stepper stepper_Z(STEPS, Z_AXIS_STEPPER_DRIVER_1, Z_AXIS_STEPPER_DRIVER_2);
 
 // the previous reading from the analog input
 int previous = 0;
@@ -77,8 +86,37 @@ void run_motor(){
 
     // move a number of steps equal to the change in the
     // sensor reading
-    stepper.step(val - previous);
+    // stepperX.step(val - previous);
 
     // remember the previous value of the sensor
     previous = val;
+}
+
+#define LENTO 50
+
+uint8_t duty;
+
+void set_X_motor(uint8_t value){
+
+}
+void set_Y_motor(uint8_t value){
+    
+}
+void set_Z_motor(uint8_t value){
+    
+}
+void set_all_motors_speed(uint8_t state){
+    
+}
+void set_spindle_state(uint8_t on_off){
+    
+}
+void set_spindle_speed(uint8_t value){
+    if (value == 0)
+        duty = LENTO;
+
+    // analogWrite();
+}
+void set_spindle_rotation_side(uint8_t right_left){
+    
 }

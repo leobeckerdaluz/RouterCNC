@@ -1,46 +1,31 @@
 #include <Arduino.h>
-#include "definitions.h"
+
+extern uint8_t page;
 
 bool editing = false;
 bool programming_mode = false;
 uint8_t screens_iterator = 1; // Inicia na posição da primeira tela de edição
 
+unsigned long time_p, atual_p;
+bool button_p_state;
+
 // ----------------------------------------------------
 /* P */
-void p_button_short_click_event(){
-    // if (programming_mode){
-    //     programming_mode = false;
-    //     editing = false;
-    //     #if DEBUG_CONSOLE
-    //     Serial.println("Programming Mode desativado!");
-    //     #endif
-    //     // Atualiza o iterador para a primeira posição do array
-    //     if (controller_type == HYSTERESIS_CONTROLLER)
-    //         current_page = programming_hyst_screens[0];
-    //     else if (controller_type == PROPORTIONAL_CONTROLLER)
-    //         current_page = programming_prop_screens[0];
-    //     // Atualiza as telas
-    //     update_current_screen(true);
-    // }
-    // else{
-    //     programming_mode = true;
-    //     #if DEBUG_CONSOLE
-    //     Serial.println("Programming Mode Ativado!");
-    //     #endif
-    //     // Atualiza o iterador para a segunda posição (edição)
-    //     if (controller_type == HYSTERESIS_CONTROLLER)
-    //         current_page = programming_hyst_screens[screens_iterator];
-    //     else if (controller_type == PROPORTIONAL_CONTROLLER)
-    //         current_page = programming_prop_screens[screens_iterator];
-    //     // Atualiza as telas
-    //     update_current_screen(true);
-    // }
+void manual_ISR(){
+    // if(digitalRead(BUTTON_P_PIN)){
+	// 	atual_p = millis();
+	// 	while(digitalRead(BUTTON_P_PIN) == HIGH);
+	// 	time_p = millis();
+	// 	if(time_p - atual_p >= 100)	button_p_state = true;
+	// }
+    if(page <= 6)   page++;
+    else            page=0;        
 }
 // ----------------------------------------------------
 
 // ----------------------------------------------------
 /* LEFT */
-void left_button_short_click_event(){
+void CW_ISR(){
     // if(initializing){
     //     controller_type = PROPORTIONAL_CONTROLLER;
     //     welcome_controller();
@@ -82,7 +67,7 @@ void left_button_short_click_event(){
 
 // ----------------------------------------------------
 /* RIGHT */
-void right_button_short_click_event(){
+void CCW_ISR(){
     // if(initializing){
     //     controller_type = HYSTERESIS_CONTROLLER;
     //     welcome_controller();
@@ -124,7 +109,7 @@ void right_button_short_click_event(){
 
 // ----------------------------------------------------
 /* s */
-void s_button_short_click_event(){
+void spindle_ISR(){
     // if(programming_mode){
     //     if(editing){
     //         #if DEBUG_CONSOLE

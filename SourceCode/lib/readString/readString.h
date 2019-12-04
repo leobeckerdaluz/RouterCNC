@@ -14,7 +14,7 @@ struct values {
     String F_Value,M3_Value, M4_Value;
 };
 
-void findPosition();
+uint8_t findPosition();
 
 String findNext(int id);
 

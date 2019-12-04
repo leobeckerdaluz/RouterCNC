@@ -3,29 +3,19 @@
 int bufferPosition[7];
 int i=0, state = 0;
 int aux, first,second;
-bool read = 0;
 String buffer = " ";
 
 extern struct values valuesData;
 
-void findPosition()
+uint8_t findPosition()
 {
-    if (Serial.available() > 0 && read == 0) 
+    if (Serial.available()) 
     {
-
         buffer = Serial.readString();
         
         Serial.print("Eu recebi: ");
         Serial.println(buffer);
 
-        read = 1;
-
-
-
-    }
-
-    if(read == 1)
-    {
         Serial.println(sizeof(buffer));
         first = buffer.indexOf("$");
         second = buffer.indexOf("#");
@@ -34,16 +24,13 @@ void findPosition()
         Serial.println("Segundo ");
         Serial.println(second);
 
-        if(first < 0 || second < 0)
-        {
-        Serial.println("Formato String errado.");
-        }else{
-        Serial.println("String Correta ");
-        state = STR_CORRECT;
-
-
-    }
-
+        if(first < 0 || second < 0){
+            Serial.println("Formato String errado.");
+        }
+        else{
+            Serial.println("String Correta ");
+            state = STR_CORRECT;
+        }
 
         while ( state <=7)
         {
@@ -155,15 +142,12 @@ void findPosition()
         }
 
         for(i =0; i < 7;i++)
-        {
-        
-        Serial.println(bufferPosition[i]);
+            Serial.println(bufferPosition[i]);
 
-        }
-
+        return 1;
     }
 
-    
+    return 0;
 }
 
 String findNext(int id)
@@ -197,7 +181,16 @@ String findNext(int id)
       if(id==1 || id == 2)
       {
          //Serial.println(buffer.substring(bufferPosition[id],  bufferPosition[posi]));
-         return buffer.substring(bufferPosition[id],  bufferPosition[posi]);
+         
+
+         if(last==0)
+         {
+             return buffer.substring(bufferPosition[id],  second);
+         }else{
+             return buffer.substring(bufferPosition[id],  bufferPosition[posi]);
+         }
+
+         
       }else{
 
           if(last == 0)
@@ -226,121 +219,114 @@ void getData()
 
     while(state != (STEP_SEVEN +1))
     {
-    switch (state)
-    {
-    case STR_CORRECT:
-    {  
-        if(bufferPosition[0] > 0)
+        switch (state)
         {
-            Serial.println("Valor do S");
-            Serial.println(findNext(0));
-            valuesData.S_Value = findNext(0).toInt();
-            
-            
-        }else{
-            valuesData.S_Value = -1;
+            case STR_CORRECT:
+            {  
+                if(bufferPosition[0] > 0)
+                {
+                    Serial.println("Valor do S");
+                    Serial.println(findNext(0));
+                    valuesData.S_Value = findNext(0).toInt();
+                    
+                    
+                }else{
+                    valuesData.S_Value = -1;
+                }
+                    
+                state = STEP_TWO;
+                break;
+
+            }
+            Serial.println("Stepp two");
+
+            case STEP_TWO:
+            {
+
+                if(bufferPosition[1] > 0)
+                {
+                    Serial.println("Valor do M");
+                    Serial.println(findNext(1));
+                    valuesData.M3_Value = findNext(1);
+                }else{
+                    valuesData.M3_Value = "Null";
+                }
+
+                state = STEP_THREE;
+                break;
+            }
+
+            case STEP_THREE:
+            {
+                if(bufferPosition[2] > 0)
+                {
+                    Serial.println("Valor do M");
+                    Serial.println(findNext(2));
+                    valuesData.M4_Value = findNext(2);
+                }else{
+                    valuesData.M4_Value = "Null";
+                }
+                state = STEP_FOUR;
+                break;
+            }
+
+            case STEP_FOUR:
+            {
+                if(bufferPosition[3] > 0)
+                {
+                    Serial.println("Valor do F");
+                    Serial.println(findNext(3));
+                    valuesData.F_Value = findNext(3);
+                }else{
+                    valuesData.F_Value = "Null";
+                }
+                state = STEP_FIVE;
+                break;
+            }
+
+            case STEP_FIVE:
+            {
+                if(bufferPosition[4] > 0)
+                {
+                    Serial.println("Valor do X");
+                    Serial.println(findNext(4));
+                    valuesData.X_Value = findNext(4).toInt();
+                }else{
+                    valuesData.X_Value = 0;
+                }
+
+                state = STEP_SIX;
+                break;
+            }
+
+            case STEP_SIX:
+            {
+                if(bufferPosition[5] > 0)
+                {
+                    Serial.println("Valor do Y");
+                    Serial.println(findNext(5));
+                    valuesData.Y_Value = findNext(5).toInt();
+                }else{
+                    valuesData.Y_Value = 0;
+                }
+
+                state = STEP_SEVEN;
+                break;
+            }
+
+            case STEP_SEVEN:
+            {
+                if(bufferPosition[6] > 0)
+                {
+                    Serial.println("Valor do Z");
+                    valuesData.Z_Value = findNext(6).toInt();
+                    Serial.println(valuesData.Z_Value);
+                }else{
+                    valuesData.Z_Value = 0;
+                }
+                state =8;
+                break;
+            }
         }
-            
-        
-        state = STEP_TWO;
-        break;
-
     }
-    Serial.println("Stepp two");
-
-    case STEP_TWO:
-    {
-
-        if(bufferPosition[1] > 0)
-        {
-            Serial.println("Valor do M");
-            Serial.println(findNext(1));
-            valuesData.M3_Value = findNext(1);
-        }else{
-             valuesData.M3_Value = "Null";
-        }
-
-        state = STEP_THREE;
-        break;
-    }
-
-    case STEP_THREE:
-    {
-        if(bufferPosition[2] > 0)
-        {
-            Serial.println("Valor do M");
-            Serial.println(findNext(2));
-            valuesData.M4_Value = findNext(2);
-        }else{
-            valuesData.M4_Value = "Null";
-        }
-        state = STEP_FOUR;
-        break;
-    }
-
-    case STEP_FOUR:
-    {
-        if(bufferPosition[3] > 0)
-        {
-            Serial.println("Valor do F");
-            Serial.println(findNext(3));
-            valuesData.F_Value = findNext(3);
-        }else{
-            valuesData.F_Value = "Null";
-        }
-        state = STEP_FIVE;
-        break;
-    }
-
-    case STEP_FIVE:
-    {
-        if(bufferPosition[4] > 0)
-        {
-            Serial.println("Valor do X");
-            Serial.println(findNext(4));
-            valuesData.X_Value = findNext(4).toInt();
-        }else{
-            valuesData.X_Value = 0;
-        }
-
-        state = STEP_SIX;
-        break;
-    }
-
-    case STEP_SIX:
-    {
-        if(bufferPosition[5] > 0)
-        {
-            Serial.println("Valor do Y");
-            Serial.println(findNext(5));
-            valuesData.Y_Value = findNext(5).toInt();
-        }else{
-            valuesData.Y_Value = 0;
-        }
-
-
-        state = STEP_SEVEN;
-        break;
-    }
-
-        case STEP_SEVEN:
-    {
-        if(bufferPosition[6] > 0)
-        {
-            Serial.println("Valor do Z");
-            valuesData.Z_Value = findNext(6).toInt();
-            Serial.println(valuesData.Z_Value);
-
-        }else{
-            valuesData.Z_Value = 0;
-        }
-        state =8;
-        break;
-    }
-
-
-    }
-    }
-    read = 0;
-
 }
