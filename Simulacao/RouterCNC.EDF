@@ -6,9 +6,9 @@
  (resolution mm 100000)
  (unit mm)
  (structure
-  (boundary (rect pcb -38.20160 -44.55160 54.71160 12.80160))
-  (boundary (path signal 0.20320 -38.10000 -44.45000 54.61000 -44.45000 54.61000 12.70000
-   -38.10000 12.70000 -38.10000 -44.45000))
+  (boundary (rect pcb -34.39160 -48.36160 68.68160 12.80160))
+  (boundary (path signal 0.20320 -34.29000 -48.26000 68.58000 -48.26000 68.58000 12.70000
+   -34.29000 12.70000 -34.29000 -48.26000))
   (flip_style mirror_first)
   (layer TOP (type signal) (direction horizontal))
   (layer I1 (type signal) (direction off))
@@ -51,23 +51,34 @@
   )
  )
  (placement
-  (component "QFP50P1600X1600X120-100_U1" (place U1 19.05000 -29.21000 front 0))
-  (component DIL16_XMEN_DRIVER (place XMEN_DRIVER 5.08000 2.54000 front -90))
-  (component DIL16_BROCA_DRIVER (place BROCA_DRIVER 27.94000 2.54000 front -90))
-  (component "DIL14_INVERSOR 2" (place "INVERSOR 2" -6.35000 -39.37000 front 90))
-  (component DIL16_IPCHILOPNE_DRIVER (place IPCHILOPNE_DRIVER -13.97000 2.54000 front 270
+  (component "QFP50P1600X1600X120-100_U1" (place U1 15.24000 -35.56000 front 0))
+  (component "DIL16_DRIVER MOTOR X" (place "DRIVER MOTOR X" -29.21000 -1.27000 front -90
   ))
-  (component DIL16_SOTTIIS_DRIVER (place SOTTIIS_DRIVER -33.02000 2.54000 front 270
+  (component "DIL16_DRIVER MOTOR Y" (place "DRIVER MOTOR Y" -11.43000 -1.27000 front -90
   ))
-  (component "DIL14_INVERSOR 1" (place "INVERSOR 1" -25.40000 -39.37000 front 90))
-  (component "CONN-SIL5_XMEN" (place XMEN 13.97000 8.89000 front 180))
-  (component "CONN-SIL5_IPCHILOPNE" (place IPCHILOPNE -5.08000 8.89000 front 180))
-  (component "CONN-SIL5_SOTTIIS" (place SOTTIIS -34.29000 8.89000 front 0))
-  (component "CONN-SIL4_LCD" (place LCD 46.99000 -13.97000 front 270))
-  (component "CONN-SIL2_BROCA" (place BROCA 33.02000 8.89000 front 180))
-  (component "CONN-SIL1_COVER_CLOSED" (place COVER_CLOSED 46.99000 -1.27000 front 0
+  (component "DIL16_DRIVER MOTOR Z" (place "DRIVER MOTOR Z" 6.35000 -1.27000 front -90
   ))
-  (component LED_STATUS (place STATUS 45.72000 -38.10000 front 0))
+  (component "DIL14_INVERSOR 1" (place "INVERSOR 1" -29.21000 -27.94000 front -90))
+  (component "DIL16_DRIVER SPINDLE" (place "DRIVER SPINDLE" 24.13000 -1.27000 front 270
+  ))
+  (component "DIL14_INVERSOR 2" (place "INVERSOR 2" -13.97000 -27.94000 front -90))
+  (component "SW-PUSH1_CCW" (place CCW 63.50000 -25.40000 front 180))
+  (component "SW-PUSH1_CW" (place CW 45.72000 -25.40000 front 180))
+  (component "SW-PUSH1_P" (place P 63.50000 -41.91000 front 180))
+  (component "SW-PUSH1_S" (place S 45.72000 -41.91000 front 180))
+  (component "CONN-SIL5_EIXO X" (place "EIXO X" -20.32000 7.62000 front 180))
+  (component "CONN-SIL5_EIXO Y" (place "EIXO Y" -2.54000 7.62000 front 180))
+  (component "CONN-SIL5_EIXO Z" (place "EIXO Z" 5.08000 7.62000 front 0))
+  (component "CONN-SIL4_DISPLAY" (place DISPLAY 55.88000 7.62000 front 0))
+  (component RES40_R1 (place R1 59.69000 -16.51000 front 90))
+  (component RES40_R2 (place R2 55.88000 -6.35000 front -90))
+  (component RES40_R3 (place R3 52.07000 -6.35000 front -90))
+  (component RES40_R4 (place R4 48.26000 -16.51000 front 90))
+  (component "CONN-SIL2_SPINDLE" (place SPINDLE 29.21000 7.62000 front 180))
+  (component "CONN-SIL1_COVER CLOSED" (place "COVER CLOSED" 41.91000 7.62000 front 0
+  ))
+  (component LED_STATUS (place STATUS 40.64000 -1.27000 front 0))
+  (component RES40_R5 (place R5 44.45000 -16.51000 front 90))
  )
  (library
   (image "QFP50P1600X1600X120-100_U1" (side front)
@@ -175,7 +186,7 @@
    (pin PS1 (rotate 0) 100 7.70000 7.70000)
    (pin PS1 (rotate 0) 101 -7.70000 -7.70000)
   )
-  (image DIL16_XMEN_DRIVER (side front)
+  (image "DIL16_DRIVER MOTOR X" (side front)
    (outline (rect TOP -1.37160 -0.63500 19.15160 8.25500))
    (pin PS2 (rotate 0) 0 0.00000 0.00000)
    (pin PS3 (rotate 0) 1 2.54000 0.00000)
@@ -194,7 +205,7 @@
    (pin PS3 (rotate 0) 14 2.54000 7.62000)
    (pin PS3 (rotate 0) 15 0.00000 7.62000)
   )
-  (image DIL16_BROCA_DRIVER (side front)
+  (image "DIL16_DRIVER MOTOR Y" (side front)
    (outline (rect TOP -1.37160 -0.63500 19.15160 8.25500))
    (pin PS2 (rotate 0) 0 0.00000 0.00000)
    (pin PS3 (rotate 0) 1 2.54000 0.00000)
@@ -213,43 +224,7 @@
    (pin PS3 (rotate 0) 14 2.54000 7.62000)
    (pin PS3 (rotate 0) 15 0.00000 7.62000)
   )
-  (image "DIL14_INVERSOR 2" (side front)
-   (outline (rect TOP -1.37160 -0.63500 16.61160 8.25500))
-   (pin PS2 (rotate 0) 0 0.00000 0.00000)
-   (pin PS3 (rotate 0) 1 2.54000 0.00000)
-   (pin PS3 (rotate 0) 2 5.08000 0.00000)
-   (pin PS3 (rotate 0) 3 7.62000 0.00000)
-   (pin PS3 (rotate 0) 4 10.16000 0.00000)
-   (pin PS3 (rotate 0) 5 12.70000 0.00000)
-   (pin PS3 (rotate 0) 6 15.24000 0.00000)
-   (pin PS3 (rotate 0) 7 15.24000 7.62000)
-   (pin PS3 (rotate 0) 8 12.70000 7.62000)
-   (pin PS3 (rotate 0) 9 10.16000 7.62000)
-   (pin PS3 (rotate 0) 10 7.62000 7.62000)
-   (pin PS3 (rotate 0) 11 5.08000 7.62000)
-   (pin PS3 (rotate 0) 12 2.54000 7.62000)
-   (pin PS3 (rotate 0) 13 0.00000 7.62000)
-  )
-  (image DIL16_IPCHILOPNE_DRIVER (side front)
-   (outline (rect TOP -1.37160 -0.63500 19.15160 8.25500))
-   (pin PS2 (rotate 0) 0 0.00000 0.00000)
-   (pin PS3 (rotate 0) 1 2.54000 0.00000)
-   (pin PS3 (rotate 0) 2 5.08000 0.00000)
-   (pin PS3 (rotate 0) 3 7.62000 0.00000)
-   (pin PS3 (rotate 0) 4 10.16000 0.00000)
-   (pin PS3 (rotate 0) 5 12.70000 0.00000)
-   (pin PS3 (rotate 0) 6 15.24000 0.00000)
-   (pin PS3 (rotate 0) 7 17.78000 0.00000)
-   (pin PS3 (rotate 0) 8 17.78000 7.62000)
-   (pin PS3 (rotate 0) 9 15.24000 7.62000)
-   (pin PS3 (rotate 0) 10 12.70000 7.62000)
-   (pin PS3 (rotate 0) 11 10.16000 7.62000)
-   (pin PS3 (rotate 0) 12 7.62000 7.62000)
-   (pin PS3 (rotate 0) 13 5.08000 7.62000)
-   (pin PS3 (rotate 0) 14 2.54000 7.62000)
-   (pin PS3 (rotate 0) 15 0.00000 7.62000)
-  )
-  (image DIL16_SOTTIIS_DRIVER (side front)
+  (image "DIL16_DRIVER MOTOR Z" (side front)
    (outline (rect TOP -1.37160 -0.63500 19.15160 8.25500))
    (pin PS2 (rotate 0) 0 0.00000 0.00000)
    (pin PS3 (rotate 0) 1 2.54000 0.00000)
@@ -285,50 +260,131 @@
    (pin PS3 (rotate 0) 12 2.54000 7.62000)
    (pin PS3 (rotate 0) 13 0.00000 7.62000)
   )
-  (image "CONN-SIL5_XMEN" (side front)
-   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
-   (pin PS4 (rotate 0) 2 5.08000 0.00000)
-   (pin PS4 (rotate 0) 3 7.62000 0.00000)
-   (pin PS4 (rotate 0) 4 10.16000 0.00000)
+  (image "DIL16_DRIVER SPINDLE" (side front)
+   (outline (rect TOP -1.37160 -0.63500 19.15160 8.25500))
+   (pin PS2 (rotate 0) 0 0.00000 0.00000)
+   (pin PS3 (rotate 0) 1 2.54000 0.00000)
+   (pin PS3 (rotate 0) 2 5.08000 0.00000)
+   (pin PS3 (rotate 0) 3 7.62000 0.00000)
+   (pin PS3 (rotate 0) 4 10.16000 0.00000)
+   (pin PS3 (rotate 0) 5 12.70000 0.00000)
+   (pin PS3 (rotate 0) 6 15.24000 0.00000)
+   (pin PS3 (rotate 0) 7 17.78000 0.00000)
+   (pin PS3 (rotate 0) 8 17.78000 7.62000)
+   (pin PS3 (rotate 0) 9 15.24000 7.62000)
+   (pin PS3 (rotate 0) 10 12.70000 7.62000)
+   (pin PS3 (rotate 0) 11 10.16000 7.62000)
+   (pin PS3 (rotate 0) 12 7.62000 7.62000)
+   (pin PS3 (rotate 0) 13 5.08000 7.62000)
+   (pin PS3 (rotate 0) 14 2.54000 7.62000)
+   (pin PS3 (rotate 0) 15 0.00000 7.62000)
   )
-  (image "CONN-SIL5_IPCHILOPNE" (side front)
-   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
-   (pin PS4 (rotate 0) 2 5.08000 0.00000)
-   (pin PS4 (rotate 0) 3 7.62000 0.00000)
-   (pin PS4 (rotate 0) 4 10.16000 0.00000)
+  (image "DIL14_INVERSOR 2" (side front)
+   (outline (rect TOP -1.37160 -0.63500 16.61160 8.25500))
+   (pin PS2 (rotate 0) 0 0.00000 0.00000)
+   (pin PS3 (rotate 0) 1 2.54000 0.00000)
+   (pin PS3 (rotate 0) 2 5.08000 0.00000)
+   (pin PS3 (rotate 0) 3 7.62000 0.00000)
+   (pin PS3 (rotate 0) 4 10.16000 0.00000)
+   (pin PS3 (rotate 0) 5 12.70000 0.00000)
+   (pin PS3 (rotate 0) 6 15.24000 0.00000)
+   (pin PS3 (rotate 0) 7 15.24000 7.62000)
+   (pin PS3 (rotate 0) 8 12.70000 7.62000)
+   (pin PS3 (rotate 0) 9 10.16000 7.62000)
+   (pin PS3 (rotate 0) 10 7.62000 7.62000)
+   (pin PS3 (rotate 0) 11 5.08000 7.62000)
+   (pin PS3 (rotate 0) 12 2.54000 7.62000)
+   (pin PS3 (rotate 0) 13 0.00000 7.62000)
   )
-  (image "CONN-SIL5_SOTTIIS" (side front)
-   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
+  (image "SW-PUSH1_CCW" (side front)
+   (outline (rect TOP -3.91160 -7.72160 8.99160 5.18160))
    (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
-   (pin PS4 (rotate 0) 2 5.08000 0.00000)
-   (pin PS4 (rotate 0) 3 7.62000 0.00000)
-   (pin PS4 (rotate 0) 4 10.16000 0.00000)
+   (pin PS4 (rotate 0) 1 5.08000 0.00000)
   )
-  (image "CONN-SIL4_LCD" (side front)
+  (image "SW-PUSH1_CW" (side front)
+   (outline (rect TOP -3.91160 -7.72160 8.99160 5.18160))
+   (pin PS4 (rotate 0) 0 0.00000 0.00000)
+   (pin PS4 (rotate 0) 1 5.08000 0.00000)
+  )
+  (image "SW-PUSH1_P" (side front)
+   (outline (rect TOP -3.91160 -7.72160 8.99160 5.18160))
+   (pin PS4 (rotate 0) 0 0.00000 0.00000)
+   (pin PS4 (rotate 0) 1 5.08000 0.00000)
+  )
+  (image "SW-PUSH1_S" (side front)
+   (outline (rect TOP -3.91160 -7.72160 8.99160 5.18160))
+   (pin PS4 (rotate 0) 0 0.00000 0.00000)
+   (pin PS4 (rotate 0) 1 5.08000 0.00000)
+  )
+  (image "CONN-SIL5_EIXO X" (side front)
+   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 2 5.08000 0.00000)
+   (pin PS5 (rotate 0) 3 7.62000 0.00000)
+   (pin PS5 (rotate 0) 4 10.16000 0.00000)
+  )
+  (image "CONN-SIL5_EIXO Y" (side front)
+   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 2 5.08000 0.00000)
+   (pin PS5 (rotate 0) 3 7.62000 0.00000)
+   (pin PS5 (rotate 0) 4 10.16000 0.00000)
+  )
+  (image "CONN-SIL5_EIXO Z" (side front)
+   (outline (rect TOP -1.37160 -1.37160 11.53160 1.37160))
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 2 5.08000 0.00000)
+   (pin PS5 (rotate 0) 3 7.62000 0.00000)
+   (pin PS5 (rotate 0) 4 10.16000 0.00000)
+  )
+  (image "CONN-SIL4_DISPLAY" (side front)
    (outline (rect TOP -1.37160 -1.37160 8.99160 1.37160))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
-   (pin PS4 (rotate 0) 2 5.08000 0.00000)
-   (pin PS4 (rotate 0) 3 7.62000 0.00000)
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 2 5.08000 0.00000)
+   (pin PS5 (rotate 0) 3 7.62000 0.00000)
   )
-  (image "CONN-SIL2_BROCA" (side front)
+  (image RES40_R1 (side front)
+   (outline (rect TOP -0.88900 -0.88900 11.04900 0.88900))
+   (pin PS6 (rotate 0) 0 0.00000 0.00000)
+   (pin PS6 (rotate 0) 1 10.16000 0.00000)
+  )
+  (image RES40_R2 (side front)
+   (outline (rect TOP -0.88900 -0.88900 11.04900 0.88900))
+   (pin PS6 (rotate 0) 0 0.00000 0.00000)
+   (pin PS6 (rotate 0) 1 10.16000 0.00000)
+  )
+  (image RES40_R3 (side front)
+   (outline (rect TOP -0.88900 -0.88900 11.04900 0.88900))
+   (pin PS6 (rotate 0) 0 0.00000 0.00000)
+   (pin PS6 (rotate 0) 1 10.16000 0.00000)
+  )
+  (image RES40_R4 (side front)
+   (outline (rect TOP -0.88900 -0.88900 11.04900 0.88900))
+   (pin PS6 (rotate 0) 0 0.00000 0.00000)
+   (pin PS6 (rotate 0) 1 10.16000 0.00000)
+  )
+  (image "CONN-SIL2_SPINDLE" (side front)
    (outline (rect TOP -1.37160 -1.37160 3.91160 1.37160))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
   )
-  (image "CONN-SIL1_COVER_CLOSED" (side front)
+  (image "CONN-SIL1_COVER CLOSED" (side front)
    (outline (rect TOP -1.37160 -1.37160 1.37160 1.37160))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
   )
   (image LED_STATUS (side front)
    (outline (rect TOP -2.00660 -2.64160 3.91160 3.27660))
-   (pin PS4 (rotate 0) 0 0.00000 0.00000)
-   (pin PS4 (rotate 0) 1 2.54000 0.00000)
+   (pin PS5 (rotate 0) 0 0.00000 0.00000)
+   (pin PS5 (rotate 0) 1 2.54000 0.00000)
+  )
+  (image RES40_R5 (side front)
+   (outline (rect TOP -0.88900 -0.88900 11.04900 0.88900))
+   (pin PS6 (rotate 0) 0 0.00000 0.00000)
+   (pin PS6 (rotate 0) 1 10.16000 0.00000)
   )
   (padstack PS0 (absolute on) (shape (rect TOP -0.15240 -0.74930 0.15240 0.74930)))
   (padstack PS1 (absolute on) (shape (circle TOP 1.00000 0 0)))
@@ -369,6 +425,24 @@
    (shape (circle BOT 1.27000 0 0))
   )
   (padstack PS4 (absolute on)
+   (shape (circle TOP 3.81000 0 0))
+   (shape (circle I1 3.81000 0 0))
+   (shape (circle I2 3.81000 0 0))
+   (shape (circle I3 3.81000 0 0))
+   (shape (circle I4 3.81000 0 0))
+   (shape (circle I5 3.81000 0 0))
+   (shape (circle I6 3.81000 0 0))
+   (shape (circle I7 3.81000 0 0))
+   (shape (circle I8 3.81000 0 0))
+   (shape (circle I9 3.81000 0 0))
+   (shape (circle I10 3.81000 0 0))
+   (shape (circle I11 3.81000 0 0))
+   (shape (circle I12 3.81000 0 0))
+   (shape (circle I13 3.81000 0 0))
+   (shape (circle I14 3.81000 0 0))
+   (shape (circle BOT 3.81000 0 0))
+  )
+  (padstack PS5 (absolute on)
    (shape (rect TOP -1.01600 -1.01600 1.01600 1.01600))
    (shape (rect I1 -1.01600 -1.01600 1.01600 1.01600))
    (shape (rect I2 -1.01600 -1.01600 1.01600 1.01600))
@@ -385,6 +459,24 @@
    (shape (rect I13 -1.01600 -1.01600 1.01600 1.01600))
    (shape (rect I14 -1.01600 -1.01600 1.01600 1.01600))
    (shape (rect BOT -1.01600 -1.01600 1.01600 1.01600))
+  )
+  (padstack PS6 (absolute on)
+   (shape (circle TOP 1.77800 0 0))
+   (shape (circle I1 1.77800 0 0))
+   (shape (circle I2 1.77800 0 0))
+   (shape (circle I3 1.77800 0 0))
+   (shape (circle I4 1.77800 0 0))
+   (shape (circle I5 1.77800 0 0))
+   (shape (circle I6 1.77800 0 0))
+   (shape (circle I7 1.77800 0 0))
+   (shape (circle I8 1.77800 0 0))
+   (shape (circle I9 1.77800 0 0))
+   (shape (circle I10 1.77800 0 0))
+   (shape (circle I11 1.77800 0 0))
+   (shape (circle I12 1.77800 0 0))
+   (shape (circle I13 1.77800 0 0))
+   (shape (circle I14 1.77800 0 0))
+   (shape (circle BOT 1.77800 0 0))
   )
   (padstack $VIA_POWER (absolute on)
    (shape (circle TOP 0.76200 0 0))
@@ -473,291 +565,293 @@
    )
    (pins)
   )
-  (net "#00117"
+  (net "#00115"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins STATUS-0)
+   (pins P-1 R1-0)
+  )
+  (net "#00116"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins STATUS-0 R5-1)
+  )
+  (net "#00120"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins "DRIVER MOTOR X"-2 "EIXO X"-1)
   )
   (net "#00121"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins XMEN_DRIVER-2 XMEN-1)
+   (pins "DRIVER MOTOR X"-5 "EIXO X"-2)
   )
   (net "#00122"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins XMEN_DRIVER-5 XMEN-2)
+   (pins "DRIVER MOTOR X"-10 "EIXO X"-3)
   )
   (net "#00123"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins XMEN_DRIVER-10 XMEN-3)
+   (pins "DRIVER MOTOR X"-13 "EIXO X"-4)
   )
   (net "#00124"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins XMEN_DRIVER-13 XMEN-4)
+   (pins "DRIVER MOTOR X"-6 "INVERSOR 1"-1)
   )
-  (net "#00125"
+  (net "#00126"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins XMEN_DRIVER-6 "INVERSOR 1"-1)
-  )
-  (net "#00127"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via $VIA_SIGNAL)
-   )
-   (pins XMEN_DRIVER-14 "INVERSOR 1"-3)
+   (pins "DRIVER MOTOR X"-14 "INVERSOR 1"-3)
   )
   (net "#00134"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins BROCA_DRIVER-2 BROCA-0)
+   (pins "DRIVER SPINDLE"-2 SPINDLE-0)
   )
   (net "#00135"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins BROCA_DRIVER-5 BROCA-1)
+   (pins "DRIVER SPINDLE"-5 SPINDLE-1)
   )
   (net "#00138"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins BROCA_DRIVER-6 "INVERSOR 2"-1)
+   (pins "DRIVER SPINDLE"-6 "INVERSOR 2"-1)
   )
   (net "#00151"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-2 IPCHILOPNE-1)
+   (pins "DRIVER MOTOR Y"-2 "EIXO Y"-1)
   )
   (net "#00152"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-5 IPCHILOPNE-2)
+   (pins "DRIVER MOTOR Y"-5 "EIXO Y"-2)
   )
   (net "#00153"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-10 IPCHILOPNE-3)
+   (pins "DRIVER MOTOR Y"-10 "EIXO Y"-3)
   )
   (net "#00154"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-13 IPCHILOPNE-4)
+   (pins "DRIVER MOTOR Y"-13 "EIXO Y"-4)
   )
   (net "#00155"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-6 "INVERSOR 1"-5)
+   (pins "DRIVER MOTOR Y"-6 "INVERSOR 1"-5)
   )
   (net "#00157"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins IPCHILOPNE_DRIVER-14 "INVERSOR 1"-11)
+   (pins "DRIVER MOTOR Y"-14 "INVERSOR 1"-11)
   )
   (net "#00168"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-2 SOTTIIS-1)
+   (pins "DRIVER MOTOR Z"-2 "EIXO Z"-1)
   )
   (net "#00169"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-5 SOTTIIS-2)
+   (pins "DRIVER MOTOR Z"-5 "EIXO Z"-2)
   )
   (net "#00170"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-10 SOTTIIS-3)
+   (pins "DRIVER MOTOR Z"-10 "EIXO Z"-3)
   )
   (net "#00171"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-13 SOTTIIS-4)
+   (pins "DRIVER MOTOR Z"-13 "EIXO Z"-4)
   )
   (net "#00172"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-6 "INVERSOR 1"-9)
+   (pins "DRIVER MOTOR Z"-6 "INVERSOR 1"-9)
   )
   (net "#00174"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins SOTTIIS_DRIVER-14 "INVERSOR 1"-7)
+   (pins "DRIVER MOTOR Z"-14 "INVERSOR 1"-7)
+  )
+  (net "#00184"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins S-1 R2-0)
+  )
+  (net "#00197"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins CCW-1 R4-0)
+  )
+  (net "#00198"
+   (circuit
+    (use_layer TOP BOT)
+    (use_via $VIA_SIGNAL)
+   )
+   (pins CW-1 R3-0)
   )
   (net "12V"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_POWER)
    )
-   (pins XMEN_DRIVER-7 BROCA_DRIVER-7 IPCHILOPNE_DRIVER-7 SOTTIIS_DRIVER-7)
+    (pins "DRIVER MOTOR X"-7 "DRIVER MOTOR Y"-7 "DRIVER MOTOR Z"-7 "DRIVER SPINDLE"-7
+   )
   )
   (net "GND"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_POWER)
    )
-    (pins U1-10 U1-31 U1-61 U1-80 U1-98 XMEN_DRIVER-3 XMEN_DRIVER-4 XMEN_DRIVER-11 XMEN_DRIVER-12
-     BROCA_DRIVER-3 BROCA_DRIVER-4 BROCA_DRIVER-11 BROCA_DRIVER-12 "INVERSOR 2"-6 IPCHILOPNE_DRIVER-3
-     IPCHILOPNE_DRIVER-4 IPCHILOPNE_DRIVER-11 IPCHILOPNE_DRIVER-12 SOTTIIS_DRIVER-3 SOTTIIS_DRIVER-4
-     SOTTIIS_DRIVER-11 SOTTIIS_DRIVER-12 "INVERSOR 1"-6 XMEN-0 IPCHILOPNE-0 SOTTIIS-0
-    LCD-2 STATUS-1)
+    (pins U1-10 U1-31 U1-61 U1-80 U1-98 "DRIVER MOTOR X"-3 "DRIVER MOTOR X"-4 "DRIVER MOTOR X"-11
+     "DRIVER MOTOR X"-12 "DRIVER MOTOR Y"-3 "DRIVER MOTOR Y"-4 "DRIVER MOTOR Y"-11 "DRIVER MOTOR Y"-12
+     "DRIVER MOTOR Z"-3 "DRIVER MOTOR Z"-4 "DRIVER MOTOR Z"-11 "DRIVER MOTOR Z"-12 "INVERSOR 1"-6
+     "DRIVER SPINDLE"-3 "DRIVER SPINDLE"-4 "DRIVER SPINDLE"-11 "DRIVER SPINDLE"-12 "INVERSOR 2"-6
+    "EIXO X"-0 "EIXO Y"-0 "EIXO Z"-0 DISPLAY-2 R2-1 R3-1 R4-1 STATUS-1)
   )
   (net "PB4"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-22 IPCHILOPNE_DRIVER-1 "INVERSOR 1"-4)
+   (pins U1-22 "DRIVER MOTOR Y"-1 "INVERSOR 1"-4)
   )
   (net "PB5"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-23 XMEN_DRIVER-9 "INVERSOR 1"-2)
+   (pins U1-23 "DRIVER MOTOR X"-9 "INVERSOR 1"-2)
   )
   (net "PB6"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-24 XMEN_DRIVER-1 "INVERSOR 1"-0)
+   (pins U1-24 "DRIVER MOTOR X"-1 "INVERSOR 1"-0)
   )
   (net "PB7"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-25)
+   (pins U1-25 R5-0)
   )
   (net "PD0"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-42 LCD-0)
+   (pins U1-42 DISPLAY-0)
   )
   (net "PD1"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-43 LCD-1)
-  )
-  (net "PD2"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via $VIA_SIGNAL)
-   )
-   (pins)
-  )
-  (net "PD3"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via $VIA_SIGNAL)
-   )
-   (pins)
-  )
-  (net "PE4"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via $VIA_SIGNAL)
-   )
-   (pins)
-  )
-  (net "PE5"
-   (circuit
-    (use_layer TOP BOT)
-    (use_via $VIA_SIGNAL)
-   )
-   (pins)
+   (pins U1-43 DISPLAY-1)
   )
   (net "PG5"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-0 COVER_CLOSED-0)
+   (pins U1-0 "COVER CLOSED"-0)
   )
   (net "PH3"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-14 BROCA_DRIVER-1 "INVERSOR 2"-0)
+   (pins U1-14 "DRIVER SPINDLE"-1 "INVERSOR 2"-0)
   )
   (net "PH4"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-15 SOTTIIS_DRIVER-9 "INVERSOR 1"-8)
+   (pins U1-15 "DRIVER MOTOR Z"-9 "INVERSOR 1"-8)
   )
   (net "PH5"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-16 SOTTIIS_DRIVER-1 "INVERSOR 1"-10)
+   (pins U1-16 "DRIVER MOTOR Z"-1 "INVERSOR 1"-10)
   )
   (net "PH6"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_SIGNAL)
    )
-   (pins U1-17 IPCHILOPNE_DRIVER-9 "INVERSOR 1"-12)
+   (pins U1-17 "DRIVER MOTOR Y"-9 "INVERSOR 1"-12)
   )
   (net "VCC/VDD"
    (circuit
     (use_layer TOP BOT)
     (use_via $VIA_POWER)
    )
-    (pins U1-9 U1-30 U1-60 U1-79 XMEN_DRIVER-0 XMEN_DRIVER-8 XMEN_DRIVER-15 BROCA_DRIVER-0
-     BROCA_DRIVER-15 "INVERSOR 2"-13 IPCHILOPNE_DRIVER-0 IPCHILOPNE_DRIVER-8 IPCHILOPNE_DRIVER-15
-    SOTTIIS_DRIVER-0 SOTTIIS_DRIVER-8 SOTTIIS_DRIVER-15 "INVERSOR 1"-13 LCD-3)
+    (pins U1-9 U1-30 U1-60 U1-79 "DRIVER MOTOR X"-0 "DRIVER MOTOR X"-8 "DRIVER MOTOR X"-15
+     "DRIVER MOTOR Y"-0 "DRIVER MOTOR Y"-8 "DRIVER MOTOR Y"-15 "DRIVER MOTOR Z"-0 "DRIVER MOTOR Z"-8
+     "DRIVER MOTOR Z"-15 "INVERSOR 1"-13 "DRIVER SPINDLE"-0 "DRIVER SPINDLE"-15 "INVERSOR 2"-13
+    CCW-0 CW-0 P-0 S-0 DISPLAY-3)
   )
   (class POWER
    "12V"
@@ -783,13 +877,14 @@
    "#00008"
    "#00009"
    "#00010"
-   "#00117"
+   "#00115"
+   "#00116"
+   "#00120"
    "#00121"
    "#00122"
    "#00123"
    "#00124"
-   "#00125"
-   "#00127"
+   "#00126"
    "#00134"
    "#00135"
    "#00138"
@@ -805,16 +900,15 @@
    "#00171"
    "#00172"
    "#00174"
+   "#00184"
+   "#00197"
+   "#00198"
    "PB4"
    "PB5"
    "PB6"
    "PB7"
    "PD0"
    "PD1"
-   "PD2"
-   "PD3"
-   "PE4"
-   "PE5"
    "PG5"
    "PH3"
    "PH4"
