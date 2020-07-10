@@ -270,6 +270,7 @@ void display_update_screen()
                 else last_page = page;
                 time_display = millis();
             }
+            delay(2000);
 
         break;
 

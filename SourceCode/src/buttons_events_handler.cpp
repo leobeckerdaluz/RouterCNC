@@ -12,14 +12,21 @@ bool button_p_state;
 // ----------------------------------------------------
 /* P */
 void manual_ISR(){
+    delay(100);
     // if(digitalRead(BUTTON_P_PIN)){
 	// 	atual_p = millis();
 	// 	while(digitalRead(BUTTON_P_PIN) == HIGH);
 	// 	time_p = millis();
 	// 	if(time_p - atual_p >= 100)	button_p_state = true;
 	// }
-    if(page <= 6)   page++;
-    else            page=0;        
+
+    if(page <= 6){
+        page++;
+        if (page == 2)
+            page = 3;
+    }   
+    else
+        page=0;        
 }
 // ----------------------------------------------------
 

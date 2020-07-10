@@ -13,7 +13,8 @@
 #define Y_AXIS_STEPPER_DRIVER_2     9
 #define Z_AXIS_STEPPER_DRIVER_1     8
 #define Z_AXIS_STEPPER_DRIVER_2     7
-#define SPIPNDLE_DRIVER             6
+#define SPIPNDLE_DRIVER_1           5
+#define SPIPNDLE_DRIVER_2           6
 
 
 // change this to the number of steps on your motor
@@ -25,14 +26,6 @@ Stepper stepper_Z(STEPS, Z_AXIS_STEPPER_DRIVER_1, Z_AXIS_STEPPER_DRIVER_2);
 
 // the previous reading from the analog input
 int previous = 0;
-
-
-typedef struct
-{
-    uint8_t inc_X;
-    uint8_t inc_Y;
-    uint8_t Y_maior;
-} interpolacao_motores;
 
 
 void setup_motors() {

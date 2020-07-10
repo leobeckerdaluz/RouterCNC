@@ -28,3 +28,21 @@
 //            SERIAL
 // ----------------------------------
 void monitor_serial();
+
+
+typedef struct
+{
+    uint8_t inc_X;
+    uint8_t inc_Y;
+    uint8_t Y_maior;
+} interpolacao_motores;
+
+void set_X_motor(uint8_t value);
+void set_Y_motor(uint8_t value);
+void set_Z_motor(uint8_t value);
+void set_all_motors_speed(uint8_t state);
+void set_spindle_state(uint8_t on_off);
+void set_spindle_speed(uint8_t value);
+void set_spindle_rotation_side(uint8_t right_left);
+
+interpolacao_motores interpolacao(uint8_t X, uint8_t Y, uint8_t min_inc_X, uint8_t min_inc_Y);

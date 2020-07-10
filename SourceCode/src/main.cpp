@@ -28,10 +28,15 @@ void heart_beating(){
 
 void cover_closed(){
 	if(digitalRead(COVER_CLOSED)){
-		atual_cc = millis();
-		while(digitalRead(COVER_CLOSED) == HIGH);
-		time_cc = millis();
-		if(time_cc - atual_cc >= 100)	cover_closed_state = true;
+		cover_closed_state = true;
+		page = 1;
+		// atual_cc = millis();
+		// while(digitalRead(COVER_CLOSED) == HIGH);
+		// time_cc = millis();
+		// if(time_cc - atual_cc >= 100)	
+		
+		cover_closed_state = true;
+		page = 3;
 	}
 }
 
@@ -65,8 +70,8 @@ void setup()
 
 void loop()
 {
-	// cover_closed();
+	cover_closed();
 	heart_beating();
-	monitor_serial();
+	// monitor_serial();
 	display_update_screen();
 }
