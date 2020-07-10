@@ -1,0 +1,718 @@
+ (routes 
+  (resolution mm 100000)
+  (parser
+  )
+  (parser
+  )
+  (structure_out
+   (layer TOP (type signal)
+   )
+   (layer I1 (type signal)
+   )
+   (layer I2 (type signal)
+   )
+   (layer I3 (type signal)
+   )
+   (layer I4 (type signal)
+   )
+   (layer I5 (type signal)
+   )
+   (layer I6 (type signal)
+   )
+   (layer I7 (type signal)
+   )
+   (layer I8 (type signal)
+   )
+   (layer I9 (type signal)
+   )
+   (layer I10 (type signal)
+   )
+   (layer I11 (type signal)
+   )
+   (layer I12 (type signal)
+   )
+   (layer I13 (type signal)
+   )
+   (layer I14 (type signal)
+   )
+   (layer BOT (type signal)
+   )
+  )
+  (library_out
+  (padstack $VIA_POWER
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  (padstack $VIA_SIGNAL
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  )
+  (network_out
+   (Net #00115 
+   (rule
+   )
+   (wire (path BOT 25400  5842000 -4191000 5842000 -3810000 6096000 -3810000
+     6096000 -1905000 5969000 -1905000 5969000 -1651000)
+    (connect (terminal pin P-1) (terminal pin R1-0))
+   )
+   )
+   (Net #00116 
+   (rule
+   )
+   (wire (path BOT 25400  4064000 -127000 4064000 -635000 4445000 -635000)
+    (connect (terminal pin STATUS-0) (terminal pin R5-1))
+   )
+   )
+   (Net #00120 
+   (rule
+   )
+   (wire (path BOT 25400  -2921000 -635000 -2794000 -635000 -2794000 208490
+     -3238500 208490 -3238500 1079500 -2286000 1079500 -2286000 762000)
+    (connect (terminal pin "DRIVER MOTOR X"-2) (terminal pin "EIXO X"-1))
+   )
+   )
+   (Net #00121 
+   (rule
+   )
+   (wire (path BOT 25400  -2921000 -1397000 -2730500 -1397000 -2730500 381000
+     -3187700 381000 -3187700 952500 -2540000 952500 -2540000 762000)
+    (connect (terminal pin "DRIVER MOTOR X"-5) (terminal pin "EIXO X"-2))
+   )
+   )
+   (Net #00122 
+   (rule
+   )
+   (wire (path BOT 25400  -2159000 -1397000 -2349500 -1397000 -2349500 444500
+     -2794000 444500 -2794000 762000)
+    (connect (terminal pin "DRIVER MOTOR X"-10) (terminal pin "EIXO X"-3))
+   )
+   )
+   (Net #00123 
+   (rule
+   )
+   (wire (path TOP 25400  -2159000 -634999 -2413000 -634999 -2413000 -508000
+     -3048000 -508000 -3048000 762000)
+    (connect (terminal pin "DRIVER MOTOR X"-13) (terminal pin "EIXO X"-4))
+   )
+   )
+   (Net #00124 
+   (rule
+   )
+   (wire (path BOT 25400  -2921000 -1651000 -2794000 -1651000 -2794000 -3048000
+     -2921000 -3048000)
+    (connect (terminal pin "DRIVER MOTOR X"-6) (terminal pin "INVERSOR 1"-1))
+   )
+   )
+   (Net #00126 
+   (rule
+   )
+   (wire (path BOT 25400  -2159000 -380999 -2032000 -380999 -2032000 -1778000
+     -2468044 -1778000 -2468044 -3556000 -2921000 -3556000)
+    (connect (terminal pin "DRIVER MOTOR X"-14) (terminal pin "INVERSOR 1"-3))
+   )
+   )
+   (Net #00134 
+   (rule
+   )
+   (wire (path BOT 25400  2413000 -635000 2921000 -635000 2921000 762000)
+    (connect (terminal pin "DRIVER SPINDLE"-2) (terminal pin SPINDLE-0))
+   )
+   )
+   (Net #00135 
+   (rule
+   )
+   (wire (path BOT 25400  2413000 -1397000 2222500 -1397000 2222500 444500
+     2667000 444500 2667000 762000)
+    (connect (terminal pin "DRIVER SPINDLE"-5) (terminal pin SPINDLE-1))
+   )
+   )
+   (Net #00138 
+   (rule
+   )
+   (wire (path TOP 25400  2413000 -1651000 2540000 -1651000 2540000 -2222500
+     63500 -2222500 63500 -2921000 -1143000 -2921000 -1143000 -3048000
+     -1397000 -3048000)
+    (connect (terminal pin "DRIVER SPINDLE"-6) (terminal pin "INVERSOR 2"-1))
+   )
+   )
+   (Net #00151 
+   (rule
+   )
+   (wire (path BOT 25400  -1143000 -635000 -1587500 -635000 -1587500 1079500
+     -508000 1079500 -508000 762000)
+    (connect (terminal pin "DRIVER MOTOR Y"-2) (terminal pin "EIXO Y"-1))
+   )
+   )
+   (Net #00152 
+   (rule
+   )
+   (wire (path BOT 25400  -1143000 -1397000 -1016000 -1397000 -1016000 -508000
+     -1460500 -508000 -1460500 952500 -762000 952500 -762000 762000)
+    (connect (terminal pin "DRIVER MOTOR Y"-5) (terminal pin "EIXO Y"-2))
+   )
+   )
+   (Net #00153 
+   (rule
+   )
+   (wire (path BOT 25400  -381000 -1397000 -190500 -1397000 -190500 368064
+     -1016000 368064 -1016000 762000)
+    (connect (terminal pin "DRIVER MOTOR Y"-10) (terminal pin "EIXO Y"-3))
+   )
+   )
+   (Net #00154 
+   (rule
+   )
+   (wire (path BOT 25400  -381000 -634999 -698500 -634999 -698500 0
+     -1270000 0 -1270000 762000)
+    (connect (terminal pin "DRIVER MOTOR Y"-13) (terminal pin "EIXO Y"-4))
+   )
+   )
+   (Net #00155 
+   (rule
+   )
+   (wire (path BOT 25400  -1143000 -1651000 -1681667 -1651000 -1681667 -4445000
+     -2439100 -4445000 -2439100 -4064000 -2921000 -4064000)
+    (connect (terminal pin "DRIVER MOTOR Y"-6) (terminal pin "INVERSOR 1"-5))
+   )
+   )
+   (Net #00157 
+   (rule
+   )
+   (wire (path BOT 25400  -1968500 -254000 -1968500 -3301999 -2159000 -3301999)
+    (connect (terminal via) (terminal pin "INVERSOR 1"-11))
+   )
+   (wire (path TOP 25400  -508000 -254000 -1968500 -254000)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path BOT 25400  -381000 -380999 -381000 -254000 -508000 -254000)
+    (connect (terminal pin "DRIVER MOTOR Y"-14) (terminal via))
+   )
+   (via $VIA_SIGNAL -1968500 -254000)
+   (via $VIA_SIGNAL -508000 -254000)
+   )
+   (Net #00168 
+   (rule
+   )
+   (wire (path BOT 25400  635000 -635000 762000 -635000 762000 762000)
+    (connect (terminal pin "DRIVER MOTOR Z"-2) (terminal pin "EIXO Z"-1))
+   )
+   )
+   (Net #00169 
+   (rule
+   )
+   (wire (path BOT 25400  635000 -1397000 1016000 -1397000 1016000 762000)
+    (connect (terminal pin "DRIVER MOTOR Z"-5) (terminal pin "EIXO Z"-2))
+   )
+   )
+   (Net #00170 
+   (rule
+   )
+   (wire (path BOT 25400  1397000 -1397000 1270000 -1397000 1270000 762000)
+    (connect (terminal pin "DRIVER MOTOR Z"-10) (terminal pin "EIXO Z"-3))
+   )
+   )
+   (Net #00171 
+   (rule
+   )
+   (wire (path BOT 25400  1397000 -634999 1524000 -634999 1524000 762000)
+    (connect (terminal pin "DRIVER MOTOR Z"-13) (terminal pin "EIXO Z"-4))
+   )
+   )
+   (Net #00172 
+   (rule
+   )
+   (wire (path TOP 25400  635000 -1651000 381000 -1651000 381000 -1524000
+     -3111500 -1524000 -3111500 -2537695 -2663002 -2537695 -2663002 -3810000
+     -2159000 -3810000)
+    (connect (terminal pin "DRIVER MOTOR Z"-6) (terminal pin "INVERSOR 1"-9))
+   )
+   )
+   (Net #00174 
+   (rule
+   )
+   (wire (path TOP 25400  1397000 -380999 1143000 -380999 1143000 -508000
+     -1841500 -508000)
+    (connect (terminal pin "DRIVER MOTOR Z"-14) (terminal via))
+   )
+   (wire (path BOT 25400  -1841500 -508000 -1841500 -4318000 -2159000 -4318000)
+    (connect (terminal via) (terminal pin "INVERSOR 1"-7))
+   )
+   (via $VIA_SIGNAL -1841500 -508000)
+   )
+   (Net #00184 
+   (rule
+   )
+   (wire (path BOT 25400  4064000 -4191000 4064000 -4508500 5461000 -4508500
+     5461000 -889000 5588000 -889000 5588000 -635000)
+    (connect (terminal pin S-1) (terminal pin R2-0))
+   )
+   )
+   (Net #00197 
+   (rule
+   )
+   (wire (path TOP 25400  5842000 -2540000 4826000 -2540000 4826000 -1651000)
+    (connect (terminal pin CCW-1) (terminal pin R4-0))
+   )
+   )
+   (Net #00198 
+   (rule
+   )
+   (wire (path BOT 25400  4064000 -2540000 4064000 -1460500 4953000 -1460500
+     4953000 -1841500 5334000 -1841500 5334000 -889000 5207000 -889000
+     5207000 -635000)
+    (connect (terminal pin CW-1) (terminal pin R3-0))
+   )
+   )
+   (Net 12V 
+   (rule
+   )
+   (wire (path TOP 63499  635000 -1905000 254000 -1905000 254000 -1778000
+     -762000 -1778000 -762000 -1905000 -1143000 -1905000)
+    (connect (terminal pin "DRIVER MOTOR Z"-7) (terminal pin "DRIVER MOTOR Y"-7))
+   )
+   (wire (path TOP 63499  -2921000 -1905000 -2540000 -1905000 -2540000 -2032000
+     -1524000 -2032000 -1524000 -1905000 -1143000 -1905000)
+    (connect (terminal pin "DRIVER MOTOR X"-7) (terminal pin "DRIVER MOTOR Y"-7))
+   )
+   (wire (path TOP 63499  635000 -1905000 762000 -1905000 762000 -1778000
+     2032000 -1778000 2032000 -1905000 2413000 -1905000)
+    (connect (terminal pin "DRIVER MOTOR Z"-7) (terminal pin "DRIVER SPINDLE"-7))
+   )
+   )
+   (Net GND 
+   (rule
+   )
+   (wire (path TOP 30480  1206500 -2603500 1874000 -2603500 1874000 -2786000)
+    (connect (terminal via) (terminal smd U1-80))
+   )
+   (wire (path TOP 30480  1270000 -3746500 1224000 -3746500 1224000 -4326000)
+    (connect (terminal via) (terminal smd U1-31))
+   )
+   (wire (path TOP 30480  1905000 -3746500 1905000 -3606000 2294000 -3606000)
+    (connect (terminal via) (terminal smd U1-61))
+   )
+   (wire (path BOT 30480  1397000 -3746500 1905000 -3746500)
+    (connect (terminal wire) (terminal via))
+   )
+   (wire (path TOP 30480  1206500 -2603500 974000 -2603500 974000 -2786000)
+    (connect (terminal via) (terminal smd U1-98))
+   )
+   (wire (path BOT 63499  317500 -1524000 317500 381000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 63499  1270000 -3746500 1397000 -3746500)
+    (connect (terminal via) (terminal wire))
+   )
+   (wire (path BOT 63499  1206500 -2603500 1206500 -3746500 1270000 -3746500)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path BOT 63499  5016500 -127000 5016500 952500 6096000 952500
+     6096000 762000)
+    (connect (terminal wire) (terminal pin DISPLAY-2))
+   )
+   (wire (path TOP 63499  3175000 -889000 4826000 -889000 4826000 -635000)
+    (connect (terminal pin "DRIVER SPINDLE"-12) (terminal pin R4-1))
+   )
+   (wire (path BOT 63499  5207000 -1651000 5207000 -1163261 4826000 -1163261
+     4826000 -635000)
+    (connect (terminal pin R3-1) (terminal pin R4-1))
+   )
+   (wire (path BOT 63499  5016500 -127000 4318000 -127000)
+    (connect (terminal wire) (terminal pin STATUS-1))
+   )
+   (wire (path BOT 63499  5016500 -127000 5016500 -635000 4826000 -635000)
+    (connect (terminal wire) (terminal pin R4-1))
+   )
+   (wire (path BOT 63499  -381000 -1143000 -508000 -1143000 -508000 -1524000
+     317500 -1524000)
+    (connect (terminal pin "DRIVER MOTOR Y"-11) (terminal wire))
+   )
+   (wire (path BOT 63499  1397000 -1143000 1524000 -1143000 1524000 -1778000
+     1206500 -1778000 1206500 -2603500)
+    (connect (terminal pin "DRIVER MOTOR Z"-11) (terminal via))
+   )
+   (wire (path BOT 63499  -2921000 -4318000 -3175000 -4318000 -3175000 -1143000
+     -2921000 -1143000)
+    (connect (terminal pin "INVERSOR 1"-6) (terminal pin "DRIVER MOTOR X"-4))
+   )
+   (wire (path TOP 63499  -254000 762000 -254000 952500 -1587500 952500
+     -1587500 762000 -2032000 762000)
+    (connect (terminal pin "EIXO Y"-0) (terminal pin "EIXO X"-0))
+   )
+   (wire (path TOP 63499  -1397000 -4318000 -1778000 -4318000 -1778000 -4508500
+     -2540000 -4508500 -2540000 -4318000 -2921000 -4318000)
+    (connect (terminal pin "INVERSOR 2"-6) (terminal pin "INVERSOR 1"-6))
+   )
+   (wire (path TOP 63499  -2159000 -1143000 -1143000 -1143000)
+    (connect (terminal pin "DRIVER MOTOR X"-11) (terminal pin "DRIVER MOTOR Y"-4))
+   )
+   (wire (path TOP 63499  1397000 -1143000 2413000 -1143000)
+    (connect (terminal pin "DRIVER MOTOR Z"-11) (terminal pin "DRIVER SPINDLE"-4))
+   )
+   (wire (path TOP 63499  635000 -889000 1397000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Z"-3) (terminal pin "DRIVER MOTOR Z"-12))
+   )
+   (wire (path TOP 63499  -2921000 -889000 -2159000 -889000)
+    (connect (terminal pin "DRIVER MOTOR X"-3) (terminal pin "DRIVER MOTOR X"-12))
+   )
+   (wire (path TOP 63499  -1143000 -889000 -381000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Y"-3) (terminal pin "DRIVER MOTOR Y"-12))
+   )
+   (wire (path TOP 63499  2413000 -889000 3175000 -889000)
+    (connect (terminal pin "DRIVER SPINDLE"-3) (terminal pin "DRIVER SPINDLE"-12))
+   )
+   (wire (path TOP 63499  127000 -889000 635000 -889000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Z"-3))
+   )
+   (wire (path TOP 63499  127000 -889000 -381000 -889000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Y"-12))
+   )
+   (wire (path BOT 63499  -254000 762000 190500 762000 190500 761999
+     317500 761999 317500 381000)
+    (connect (terminal pin "EIXO Y"-0) (terminal wire))
+   )
+   (wire (path TOP 63499  5588000 -1651000 5207000 -1651000)
+    (connect (terminal pin R2-1) (terminal pin R3-1))
+   )
+   (wire (path BOT 63499  508000 762000 508000 381000 317500 381000)
+    (connect (terminal pin "EIXO Z"-0) (terminal wire))
+   )
+   (wire (path BOT 63499  -2921000 -1143000 -2921000 -889000)
+    (connect (terminal pin "DRIVER MOTOR X"-4) (terminal pin "DRIVER MOTOR X"-3))
+    (attr bus)
+   )
+   (wire (path BOT 63499  -2159000 -1143000 -2159000 -889000)
+    (connect (terminal pin "DRIVER MOTOR X"-11) (terminal pin "DRIVER MOTOR X"-12))
+    (attr bus)
+   )
+   (wire (path BOT 63499  -1143000 -1143000 -1143000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Y"-4) (terminal pin "DRIVER MOTOR Y"-3))
+    (attr bus)
+   )
+   (wire (path BOT 63499  -381000 -1143000 -381000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Y"-11) (terminal pin "DRIVER MOTOR Y"-12))
+    (attr bus)
+   )
+   (wire (path BOT 63499  635000 -1143000 635000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Z"-4) (terminal pin "DRIVER MOTOR Z"-3))
+    (attr bus)
+   )
+   (wire (path BOT 63499  1397000 -1143000 1397000 -889000)
+    (connect (terminal pin "DRIVER MOTOR Z"-11) (terminal pin "DRIVER MOTOR Z"-12))
+    (attr bus)
+   )
+   (wire (path BOT 63499  2413000 -1143000 2413000 -889000)
+    (connect (terminal pin "DRIVER SPINDLE"-4) (terminal pin "DRIVER SPINDLE"-3))
+    (attr bus)
+   )
+   (wire (path BOT 63499  3175000 -1143000 3175000 -889000)
+    (connect (terminal pin "DRIVER SPINDLE"-11) (terminal pin "DRIVER SPINDLE"-12))
+    (attr bus)
+   )
+   (via $VIA_POWER 1905000 -3746500)
+   (via $VIA_POWER 1270000 -3746500)
+   (via $VIA_POWER 1206500 -2603500)
+   )
+   (Net PB4 
+   (rule
+   )
+   (wire (path TOP 25400  -889000 -3937000 -444500 -3937000 -444500 -4056000
+     754000 -4056000)
+    (connect (terminal via) (terminal smd U1-22))
+   )
+   (wire (path BOT 25400  -1143000 -381000 -889000 -381000 -889000 -3937000)
+    (connect (terminal pin "DRIVER MOTOR Y"-1) (terminal via))
+   )
+   (wire (path TOP 25400  -2921000 -3810000 -2921000 -3937000 -1016000 -3937000)
+    (connect (terminal pin "INVERSOR 1"-4) (terminal wire))
+   )
+   (wire (path TOP 25400  -1016000 -3937000 -889000 -3937000)
+    (connect (terminal wire) (terminal via))
+   )
+   (via $VIA_SIGNAL -889000 -3937000)
+   )
+   (Net PB5 
+   (rule
+   )
+   (wire (path TOP 25400  -2794000 -3302000 -2794000 -2667000 -3111500 -2667000
+     -3111500 -4699000 868845 -4699000 868845 -4106000 754000 -4106000)
+    (connect (terminal via) (terminal smd U1-23))
+   )
+   (wire (path BOT 25400  -2794000 -3302000 -2595729 -3302000 -2595729 -1651000
+     -2159000 -1651000)
+    (connect (terminal via) (terminal pin "DRIVER MOTOR X"-9))
+   )
+   (wire (path BOT 25400  -2921000 -3302000 -2794000 -3302000)
+    (connect (terminal pin "INVERSOR 1"-2) (terminal via))
+   )
+   (via $VIA_SIGNAL -2794000 -3302000)
+   )
+   (Net PB6 
+   (rule
+   )
+   (wire (path TOP 25400  -2921000 -2794000 -3048000 -2794000 -3048000 -4635500
+     571500 -4635500 571500 -4156000 754000 -4156000)
+    (connect (terminal pin "INVERSOR 1"-0) (terminal smd U1-24))
+   )
+   (wire (path BOT 25400  -2921000 -381000 -3048000 -381000 -3048000 -762000
+     -2794000 -762000 -2794000 -1270000 -3048000 -1270000 -3048000 -2540000
+     -2921000 -2540000 -2921000 -2794000)
+    (connect (terminal pin "DRIVER MOTOR X"-1) (terminal pin "INVERSOR 1"-0))
+   )
+   )
+   (Net PB7 
+   (rule
+   )
+   (wire (path TOP 25400  1143000 -3937000 924000 -3937000 924000 -4326000)
+    (connect (terminal via) (terminal smd U1-25))
+   )
+   (wire (path BOT 25400  4445000 -1651000 4318000 -1651000 4318000 -3937000
+     1143000 -3937000)
+    (connect (terminal pin R5-0) (terminal via))
+   )
+   (via $VIA_SIGNAL 1143000 -3937000)
+   )
+   (Net PD0 
+   (rule
+   )
+   (wire (path TOP 25400  5270500 -4318000 5270500 -4508500 1774000 -4508500
+     1774000 -4326000)
+    (connect (terminal via) (terminal smd U1-42))
+   )
+   (wire (path BOT 25400  5588000 762000 5588000 444500 5397500 444500
+     5397500 -4307550 5270500 -4307550 5270500 -4318000)
+    (connect (terminal pin DISPLAY-0) (terminal via))
+   )
+   (via $VIA_SIGNAL 5270500 -4318000)
+   )
+   (Net PD1 
+   (rule
+   )
+   (wire (path TOP 25400  5588000 -3048000 5588000 -3077412 4318000 -3077412
+     4318000 -4445000 1824800 -4445000 1824800 -4326000 1824000 -4326000)
+    (connect (terminal via) (terminal smd U1-43))
+   )
+   (wire (path BOT 25400  5842000 762000 5842000 -1841500 5588000 -1841500
+     5588000 -3048000)
+    (connect (terminal pin DISPLAY-1) (terminal via))
+   )
+   (via $VIA_SIGNAL 5588000 -3048000)
+   )
+   (Net PG5 
+   (rule
+   )
+   (wire (path TOP 25400  3365500 -2349500 3365500 -2413000 571500 -2413000
+     571500 -2956000 754000 -2956000)
+    (connect (terminal via) (terminal smd U1-0))
+   )
+   (wire (path BOT 25400  4191000 762000 4191000 444500 3365500 444500
+     3365500 -2349500)
+    (connect (terminal pin "COVER CLOSED"-0) (terminal via))
+   )
+   (via $VIA_SIGNAL 3365500 -2349500)
+   )
+   (Net PH3 
+   (rule
+   )
+   (wire (path TOP 25400  190500 -3175000 190500 -2349500 2603500 -2349500
+     2603500 -1016000 2222500 -1016000 2222500 -381000 2413000 -381000)
+    (connect (terminal wire) (terminal pin "DRIVER SPINDLE"-1))
+   )
+   (wire (path TOP 25400  190500 -3175000 -1524000 -3175000 -1524000 -2794000
+     -1397000 -2794000)
+    (connect (terminal wire) (terminal pin "INVERSOR 2"-0))
+   )
+   )
+   (Net PH4 
+   (rule
+   )
+   (wire (path TOP 25400  952500 -3683000 952500 -3706000 754000 -3706000)
+    (connect (terminal via) (terminal smd U1-15))
+   )
+   (wire (path BOT 25400  952500 -3683000 952500 -3556000)
+    (connect (terminal via) (terminal wire))
+   )
+   (wire (path BOT 25400  952500 -3556000 952500 -1651000 1397000 -1651000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Z"-9))
+   )
+   (wire (path BOT 25400  -254000 -4191000 952500 -4191000 952500 -3683000)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path TOP 25400  -2159000 -4191000 -254000 -4191000)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path BOT 25400  -2159000 -4064000 -2159000 -4191000)
+    (connect (terminal pin "INVERSOR 1"-8) (terminal via))
+   )
+   (via $VIA_SIGNAL 952500 -3683000)
+   (via $VIA_SIGNAL -254000 -4191000)
+   (via $VIA_SIGNAL -2159000 -4191000)
+   )
+   (Net PH5 
+   (rule
+   )
+   (wire (path TOP 25400  -2159000 -3556000 -1905000 -3556000 -1905000 -3683000
+     444500 -3683000)
+    (connect (terminal pin "INVERSOR 1"-10) (terminal via))
+   )
+   (wire (path TOP 25400  444500 -3683000 444500 -3706800 571500 -3706800
+     571500 -3756000 754000 -3756000)
+    (connect (terminal via) (terminal smd U1-16))
+   )
+   (wire (path BOT 25400  444500 -3683000 444500 -381000 635000 -381000)
+    (connect (terminal via) (terminal pin "DRIVER MOTOR Z"-1))
+   )
+   (via $VIA_SIGNAL 444500 -3683000)
+   )
+   (Net PH6 
+   (rule
+   )
+   (wire (path TOP 25400  -254000 -3873500 -254000 -3806800 754000 -3806800
+     754000 -3806000)
+    (connect (terminal via) (terminal smd U1-17))
+   )
+   (wire (path BOT 25400  -254000 -3429000 -254000 -3873500)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path TOP 25400  -254000 -3429000 -1898847 -3429000 -1898847 -3047999
+     -2159000 -3047999)
+    (connect (terminal via) (terminal pin "INVERSOR 1"-12))
+   )
+   (wire (path BOT 25400  -254000 -3429000 -254000 -1651000 -381000 -1651000)
+    (connect (terminal via) (terminal pin "DRIVER MOTOR Y"-9))
+   )
+   (via $VIA_SIGNAL -254000 -3873500)
+   (via $VIA_SIGNAL -254000 -3429000)
+   )
+   (Net VCC/VDD 
+   (rule
+   )
+   (wire (path TOP 30480  1397000 -2984500 1397000 -3406000 754000 -3406000)
+    (connect (terminal via) (terminal smd U1-9))
+   )
+   (wire (path BOT 63499  1397000 -2984500 1397000 -1905000)
+    (connect (terminal via) (terminal pin "DRIVER MOTOR Z"-8))
+   )
+   (wire (path TOP 30480  2476500 -2984500 2476500 -3656000 2294000 -3656000)
+    (connect (terminal via) (terminal smd U1-60))
+   )
+   (wire (path TOP 30480  1524000 -2984500 1924000 -2984500 1924000 -2786000)
+    (connect (terminal via) (terminal smd U1-79))
+   )
+   (wire (path TOP 63499  -2286000 -127000 -2159000 -127000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR X"-15))
+   )
+   (wire (path BOT 63499  2603500 -2984500 2476500 -2984500)
+    (connect (terminal wire) (terminal via))
+   )
+   (wire (path BOT 63499  2476500 -2984500 1524000 -2984500)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path TOP 63499  1587500 -127000 1397000 -127000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Z"-15))
+   )
+   (wire (path BOT 63499  2730500 -2857500 2730500 -952500 3048000 -952500
+     3048000 -127000 3175000 -127000)
+    (connect (terminal via) (terminal pin "DRIVER SPINDLE"-15))
+   )
+   (wire (path TOP 63499  2730500 -2857500 4572000 -2857500 4572000 -2540000)
+    (connect (terminal via) (terminal pin CW-0))
+   )
+   (wire (path BOT 63499  2730500 -2857500 2730500 -2984500 2603500 -2984500)
+    (connect (terminal via) (terminal wire))
+   )
+   (wire (path BOT 63499  1524000 -2984500 1397000 -2984500)
+    (connect (terminal via) (terminal via))
+   )
+   (wire (path BOT 63499  6350000 -2540000 6350000 762000)
+    (connect (terminal pin CCW-0) (terminal pin DISPLAY-3))
+   )
+   (wire (path TOP 63499  4572000 -4191000 5080000 -4191000 5080000 -3810000
+     6350000 -3810000 6350000 -4191000)
+    (connect (terminal pin S-0) (terminal pin P-0))
+   )
+   (wire (path BOT 63499  4572000 -2540000 4572000 -4191000)
+    (connect (terminal pin CW-0) (terminal pin S-0))
+   )
+   (wire (path BOT 63499  6350000 -4191000 6350000 -2540000)
+    (connect (terminal pin P-0) (terminal pin CCW-0))
+   )
+   (wire (path TOP 63499  -2159000 -2794000 -1778000 -2794000 -1778000 -2667000
+     -1016000 -2667000 -1016000 -2794000 -635000 -2794000)
+    (connect (terminal pin "INVERSOR 1"-13) (terminal pin "INVERSOR 2"-13))
+   )
+   (wire (path TOP 63499  2413000 -127000 1587500 -127000)
+    (connect (terminal pin "DRIVER SPINDLE"-0) (terminal wire))
+   )
+   (wire (path TOP 63499  -381000 -127000 635000 -127000)
+    (connect (terminal pin "DRIVER MOTOR Y"-15) (terminal pin "DRIVER MOTOR Z"-0))
+   )
+   (wire (path TOP 63499  -2159000 -127000 -1143000 -127000)
+    (connect (terminal pin "DRIVER MOTOR X"-15) (terminal pin "DRIVER MOTOR Y"-0))
+   )
+   (wire (path BOT 63499  -2159000 -2794000 -2159000 -1905000)
+    (connect (terminal pin "INVERSOR 1"-13) (terminal pin "DRIVER MOTOR X"-8))
+   )
+   (wire (path TOP 63499  635000 -127000 1397000 -127000)
+    (connect (terminal pin "DRIVER MOTOR Z"-0) (terminal pin "DRIVER MOTOR Z"-15))
+   )
+   (wire (path TOP 63499  3175000 -127000 2413000 -127000)
+    (connect (terminal pin "DRIVER SPINDLE"-15) (terminal pin "DRIVER SPINDLE"-0))
+   )
+   (wire (path TOP 63499  -2921000 -127000 -2286000 -127000)
+    (connect (terminal pin "DRIVER MOTOR X"-0) (terminal wire))
+   )
+   (wire (path TOP 63499  -1143000 -127000 -381000 -127000)
+    (connect (terminal pin "DRIVER MOTOR Y"-0) (terminal pin "DRIVER MOTOR Y"-15))
+   )
+   (wire (path BOT 63499  -381000 -2794000 -381000 -1905000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Y"-8))
+   )
+   (wire (path BOT 63499  -635000 -2794000 -381000 -2794000)
+    (connect (terminal pin "INVERSOR 2"-13) (terminal wire))
+   )
+   (wire (path TOP 63499  127000 -2032000 0 -1905000 -381000 -1905000)
+    (connect (terminal wire) (terminal pin "DRIVER MOTOR Y"-8))
+    (attr bus)
+   )
+   (wire (path TOP 63499  1397000 -1905000 1206500 -1905000 1079500 -2032000
+     127000 -2032000)
+    (connect (terminal pin "DRIVER MOTOR Z"-8) (terminal wire))
+    (attr bus)
+   )
+   (via $VIA_POWER 1397000 -2984500)
+   (via $VIA_POWER 2476500 -2984500)
+   (via $VIA_POWER 2730500 -2857500)
+   (via $VIA_POWER 1524000 -2984500)
+   )
+  )
+ )
